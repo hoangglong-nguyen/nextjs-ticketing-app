@@ -1,4 +1,4 @@
-# NextJS 13.4 Ticketing App!
+# NextJS 13.4 Example App!
 
 - Simple CRUD app
 - Tech Stack
