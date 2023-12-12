@@ -3,9 +3,12 @@ import TicketCard from "./(components)/TicketCard";
 
 const getTickets = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/Tickets", {
-      cache: "no-store",
-    });
+    const res = await fetch(
+      "https://nextjs-ticketing-app-hoang-long-nguyens-projects.vercel.app/api/Tickets",
+      {
+        cache: "no-store",
+      }
+    );
 
     if (!res.ok) {
       throw new Error("Failed to fetch topics");
@@ -20,7 +23,6 @@ const getTickets = async () => {
 const Dashboard = async () => {
   const data = await getTickets();
 
-  // Make sure we have tickets needed for production build.
   if (!data?.tickets) {
     return <p>No tickets.</p>;
   }
